@@ -14,6 +14,12 @@ namespace ShootingDice
             Player player2 = new Player();
             player2.Name = "Sue";
 
+
+            SmackTalkingPlayer Sucker = new SmackTalkingPlayer();
+            Sucker.Taunt = "Sucker";
+
+            Sucker.YellTaunt();
+
             player2.Play(player1);
 
             Console.WriteLine("-------------------");
@@ -67,6 +73,7 @@ namespace ShootingDice
                 Player player2 = shuffledPlayers[i + 1];
                 player1.Play(player2);
             }
+
         }
     }
 }

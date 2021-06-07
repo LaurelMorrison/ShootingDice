@@ -1,3 +1,5 @@
+using System;
+
 namespace ShootingDice
 {
     // TODO: Complete this class
@@ -5,6 +7,11 @@ namespace ShootingDice
     // A Player who shouts a taunt every time they roll dice
     public class SmackTalkingPlayer
     {
-        public string Taunt { get; }
+        public string Taunt { get; set; }
+
+        public virtual void YellTaunt()
+        {
+            Console.WriteLine($"Roll the dice you, {Taunt}");
+        }
     }
 }
