@@ -20,12 +20,19 @@ namespace ShootingDice
             player3.Taunt = "Sucker";
             player3.YellTaunt();
 
+            CreativeSmackTalkingPlayer player4 = new CreativeSmackTalkingPlayer();
+            player4.Name = "Your Mom";
+            player4.Taunts.Add("You roll like a girl");
+            player4.Taunts.Add("ROOKIE");
+            player4.Taunts.Add("This is just embarassing");
+            player4.Taunts.Add("Your roll stinks as much as you.");
+
             Player large = new LargeDicePlayer();
             large.Name = "Bigun Rollsalot";
 
             // Calling the games and assigning opponents for the rounds..
 
-            player2.Play(player1);
+            player4.Play(player1);
             Console.WriteLine("-------------------");
 
             player3.Play(player2);

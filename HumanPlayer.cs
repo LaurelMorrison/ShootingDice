@@ -9,7 +9,7 @@ namespace ShootingDice
     {
         public override void Play(Player other)
         {
-            Console.Write("You're up! What number do you want to pick (1-6)");
+            Console.Write("You're up! What number do you want to pick (1-6): ");
             int selectedRoll = Int32.Parse(Console.ReadLine());
             int otherRoll = other.Roll();
 
