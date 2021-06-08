@@ -27,22 +27,19 @@ namespace ShootingDice
             player4.Taunts.Add("This is just embarassing");
             player4.Taunts.Add("Your roll stinks as much as you.");
 
+            SoreLoserPlayer player5 = new SoreLoserPlayer();
+            player5.Name = "Betty";
+
+            UpperHalfPlayer player6 = new UpperHalfPlayer();
+            player6.Name = "Fancy Pants";
+
             Player large = new LargeDicePlayer();
             large.Name = "Bigun Rollsalot";
 
             // Calling the games and assigning opponents for the rounds..
 
-            player4.Play(player1);
-            Console.WriteLine("-------------------");
-
-            player3.Play(player2);
-            Console.WriteLine("-------------------");
-
-            player1.Play(large);
-            Console.WriteLine("-------------------");
-
             List<Player> players = new List<Player>() {
-                player1, player2, player3, large
+                player1, player2, player3, player4, player5, player6, large
             };
 
             PlayMany(players);
@@ -50,6 +47,7 @@ namespace ShootingDice
 
         static void PlayMany(List<Player> players)
         {
+
             Console.WriteLine();
             Console.WriteLine("Let's play a bunch of times, shall we?");
 
@@ -74,8 +72,22 @@ namespace ShootingDice
                 // Make adjacent players play noe another
                 Player player1 = shuffledPlayers[i];
                 Player player2 = shuffledPlayers[i + 1];
-                player1.Play(player2);
+
+                try
+                {
+                    player1.Play(player2);
+                }
+                catch (Exception ex)
+                {
+                    if (ex.Message == "no fair!! You cheated")
+                    {
+                        Console.WriteLine("Bratty Betty throws a fit");
+                        continue;
+                    }
+                }
             }
+
+
 
         }
     }
