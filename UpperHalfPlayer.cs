@@ -11,5 +11,26 @@ namespace ShootingDice
         {
             return new Random().Next(4, 6);
         }
+
+        public override void Play(Player other)
+        {
+            int UpperRoll = Roll();
+            int otherRoll = other.Roll();
+
+            Console.WriteLine($"{Name} rolls a {UpperRoll}");
+            Console.WriteLine($"{other.Name} rolls a {otherRoll}");
+            if (UpperRoll > otherRoll)
+            {
+                Console.WriteLine($"{Name} Wins!");
+            }
+            else if (UpperRoll < otherRoll)
+            {
+                Console.WriteLine($"{other.Name} Wins!");
+            }
+            else
+            {
+                Console.WriteLine("It's a tie");
+            }
+        }
     }
 }

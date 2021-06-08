@@ -36,10 +36,13 @@ namespace ShootingDice
             Player large = new LargeDicePlayer();
             large.Name = "Bigun Rollsalot";
 
+            SoreLoserUpperHalfPlayer player7 = new SoreLoserUpperHalfPlayer();
+            player7.Name = "Fancy Fran";
+
             // Calling the games and assigning opponents for the rounds..
 
             List<Player> players = new List<Player>() {
-                player1, player2, player3, player4, player5, player6, large
+                player1, player2, player3, player4, player5, player6, player7, large
             };
 
             PlayMany(players);
@@ -83,6 +86,10 @@ namespace ShootingDice
                     {
                         Console.WriteLine("Bratty Betty throws a fit");
                         continue;
+                    }
+                    if (ex.Message == "I'm from the upper half, I should've won")
+                    {
+                        Console.WriteLine("You peasant. I am above you, I should have won.");
                     }
                 }
             }
